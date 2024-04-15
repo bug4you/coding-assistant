@@ -1,3 +1,5 @@
+const langs = ["java", 'python', 'nodejs', 'php', 'rust', 'c#', 'vbnet', 'f#', 'c++', 'pascal', 'objectivec', 'haskell', 'ruby', 'perl', 'go', 'scala', 'c', 'cpp-clang', 'cpp-vc', 'c-vc', 'swift', 'kotlin', 'assembly'];
+
 class Command {
 
     static async start(ctx) {
@@ -15,7 +17,7 @@ class Command {
     }
 
     static async about(ctx) {
-        await ctx.reply("<i>Ushbu bot guruhlarda daasturchilar uchun mavjud kodlarni osongina tekshirib ko'rish uchun yaratilgan maxsus bot</i>", {
+        await ctx.reply(`<i>Ushbu bot guruhlarda daasturchilar uchun mavjud kodlarni osongina tekshirib ko'rish uchun yaratilgan maxsus bot\n\nUshbu botda <code>${langs.join(", ")}</code> tillarni qo'llab quvvatlaydi.</i>`, {
             reply_to_message_id: ctx.message.message_id,
             parse_mode: "HTML"
         });
