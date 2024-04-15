@@ -5,7 +5,17 @@ const {javaCodeRunner} = require("./on/Entities");
 
 const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
+bot.api.setMyCommands([
+    {command: "start", description: "Botni ishga tushirish"},
+    {command: "help", description: "Yordam"},
+    {command: "about", description: "Bot haqida"},
+    {command: "author", description: "Bot yaratuvchi haqida"},
+])
+
 bot.command("start", Command.start);
+bot.command("about", Command.about);
+bot.command("help", Command.help);
+bot.command("author", Command.author);
 
 bot.on("message", async (ctx) => {
     if (ctx.entities().length > 0) {
