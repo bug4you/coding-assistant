@@ -32,7 +32,7 @@ const repos = [
         project_count: 459689,
         homepage: "https://pkg.go.dev",
         color: "#375eab",
-        default_language: null
+        default_language: "Golang"
     },
     {
         name: "Packagist",
@@ -102,14 +102,14 @@ const repos = [
         project_count: 18868,
         homepage: "https://anaconda.org",
         color: "#fff",
-        default_language: null
+        default_language: "Python"
     },
     {
         name: "Hackage",
         project_count: 17762,
         homepage: "http://hackage.haskell.org",
         color: "#29b544",
-        default_language: null
+        default_language: "Haskell"
     },
     {
         name: "Hex",
@@ -179,7 +179,7 @@ const repos = [
         project_count: 2579,
         homepage: "http://pkgs.racket-lang.org/",
         color: "#375eab",
-        default_language: null
+        default_language: "Racket"
     },
     {
         name: "Nimble",
