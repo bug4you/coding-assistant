@@ -51,7 +51,7 @@ class Command {
                     {
                         reply_to_message_id: ctx.message.message_id,
                         parse_mode: "HTML",
-                        reply_markup: new InlineKeyboard().url(data.platform, data.homepage).url("Batafsil", data.repository_url)
+                        reply_markup: new InlineKeyboard().url(data.platform, data.package_manager_url).url("Batafsil", data.repository_url)
                     });
             } else {
                 await ctx.reply("Ma'lumotlar yuklanmadi, iltimos qayta urinib ko'ring...");
