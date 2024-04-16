@@ -2,6 +2,7 @@ require("dotenv").config();
 const {Bot} = require("grammy");
 const Command = require("./command/Command");
 const {javaCodeRunner} = require("./on/Entities");
+const {repos} = require("./data/repos");
 
 const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
@@ -10,12 +11,16 @@ bot.api.setMyCommands([
     {command: "help", description: "Yordam"},
     {command: "about", description: "Bot haqida"},
     {command: "author", description: "Bot yaratuvchi haqida"},
-])
+    ...repos.map((repo) => {
+        return {command: repo.name.toLowerCase(), description: `${repo.default_language} reposi haqida ma'lumot olish`}
+    })
+]);
 
 bot.command("start", Command.start);
 bot.command("about", Command.about);
 bot.command("help", Command.help);
 bot.command("author", Command.author);
+bot.command([...repos.map(repo => repo.name.toLowerCase())], (ctx)=> Command.getRepoCommands(ctx, bot));
 
 bot.on("message", async (ctx) => {
     if (ctx.entities().length > 0) {
